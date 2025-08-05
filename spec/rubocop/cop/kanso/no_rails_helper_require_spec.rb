@@ -39,7 +39,6 @@ describe RuboCop::Cop::Kanso::NoRailsHelperRequire, :config do
     RUBY
 
     expect_correction(<<~RUBY)
-
       describe MyClass do
       end
     RUBY

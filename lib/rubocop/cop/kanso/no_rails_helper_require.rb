@@ -22,9 +22,26 @@ module RuboCop
           return unless rails_helper_require?(node)
 
           add_offense(node) do |corrector|
-            range = range_by_whole_lines(node.source_range, include_final_newline: true)
-            corrector.remove(range)
+            corrector.remove(removal_range(node))
           end
+        end
+
+        private
+
+        def removal_range(node)
+          range = range_by_whole_lines(node.source_range, include_final_newline: true)
+          extend_range_for_blank_line(range, node.source_range.source_buffer)
+        end
+
+        def extend_range_for_blank_line(range, source_buffer)
+          return range unless blank_line_follows?(range, source_buffer)
+
+          Parser::Source::Range.new(source_buffer, range.begin_pos, range.end_pos + 1)
+        end
+
+        def blank_line_follows?(range, source_buffer)
+          end_pos = range.end_pos
+          end_pos < source_buffer.source.length && source_buffer.source[end_pos] == "\n"
         end
       end
     end
