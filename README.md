@@ -27,7 +27,7 @@ gem install rubocop-kanso
 Add the following to your `.rubocop.yml`:
 
 ```yaml
-require:
+plugins:
   - rubocop-kanso
 
 # Optional: Configure the cops
