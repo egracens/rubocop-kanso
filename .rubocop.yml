@@ -1,0 +1,44 @@
+require:
+  - rubocop-kanso
+
+plugins:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - '*.gemspec'
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - 'spec/rubocop/cop/kanso/no_rspec_describe_spec.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/rubocop-kanso.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Kanso/NoRailsHelperRequire:
+  Enabled: true
+
+Kanso/NoRSpecDescribe:
+  Enabled: true

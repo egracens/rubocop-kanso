@@ -1,0 +1,15 @@
+Kanso/NoRailsHelperRequire:
+  Description: 'Disallows requiring rails_helper in specs'
+  Enabled: true
+  VersionAdded: '1.0.0'
+  Include:
+    - '**/*_spec.rb'
+    - '**/spec/**/*.rb'
+
+Kanso/NoRSpecDescribe:
+  Description: 'Enforces using describe instead of RSpec.describe'
+  Enabled: true
+  VersionAdded: '1.0.0'
+  Include:
+    - '**/*_spec.rb'
+    - '**/spec/**/*.rb'
