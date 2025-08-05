@@ -1,13 +1,10 @@
-require:
-  - rubocop-kanso
-
 plugins:
   - rubocop-rspec
+  - rubocop-kanso
 
 AllCops:
   NewCops: enable
   SuggestExtensions: false
-  TargetRubyVersion: 3.2
   Exclude:
     - 'vendor/**/*'
     - 'tmp/**/*'

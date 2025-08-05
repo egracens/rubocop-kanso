@@ -15,12 +15,14 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/main/CHANGELOG.md"
   spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.metadata['default_lint_roller_plugin'] = 'RuboCop::Kanso::Plugin'
 
   spec.files = Dir.glob('{config,lib}/**/*', File::FNM_DOTMATCH)
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'lint_roller', '~> 1.0'
   spec.add_dependency 'rubocop', '>= 1.72'
   spec.add_dependency 'rubocop-rspec', '>= 3.0'
 end
