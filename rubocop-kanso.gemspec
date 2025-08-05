@@ -1,19 +1,16 @@
 Gem::Specification.new do |spec|
   spec.name          = 'rubocop-kanso'
-  spec.version       = '1.0.0'
+  spec.version       = '1.0.1'
   spec.authors       = ['Vlad Petrovsky']
   spec.email         = ['egracens@gmail.com']
 
   spec.summary       = 'RuboCop cops for lightweight code - simplicity through elimination (簡素)'
-  spec.description   = 'RuboCop extension focusing on simplicity and eliminating redundancy. ' \
-                       'Kanso (簡素) is a Japanese principle of simplicity through elimination of clutter.'
+  spec.description   = 'RuboCop extension focusing on simplicity and eliminating redundancy. '
   spec.homepage      = 'https://github.com/egracens/rubocop-kanso'
-  spec.license       = 'MIT'
+  spec.license       = 'Apache-2.0'
   spec.required_ruby_version = '>= 3.2.0'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = spec.homepage
-  spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/main/CHANGELOG.md"
   spec.metadata['rubygems_mfa_required'] = 'true'
   spec.metadata['default_lint_roller_plugin'] = 'RuboCop::Kanso::Plugin'
 
