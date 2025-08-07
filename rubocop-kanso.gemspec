@@ -1,6 +1,8 @@
+require_relative 'lib/rubocop/kanso/version'
+
 Gem::Specification.new do |spec|
   spec.name          = 'rubocop-kanso'
-  spec.version       = '1.0.1'
+  spec.version       = RuboCop::Kanso::VERSION
   spec.authors       = ['Vlad Petrovsky']
   spec.email         = ['egracens@gmail.com']
 
@@ -14,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
   spec.metadata['default_lint_roller_plugin'] = 'RuboCop::Kanso::Plugin'
 
-  spec.files = Dir.glob('{config,lib}/**/*', File::FNM_DOTMATCH)
+  spec.files = Dir.glob('{config,lib}/**/*', File::FNM_DOTMATCH) + ['VERSION']
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
