@@ -1,5 +1,5 @@
 module RuboCop
   module Kanso
-    VERSION = '1.0.0'.freeze
+    VERSION = File.read(File.join(__dir__, '../../..', 'VERSION')).strip.freeze
   end
 end
